@@ -9,56 +9,56 @@ import { IoClose } from "react-icons/io5";
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
-        <header className="bg-[#fffff0] shadow-sm sticky top-0 z-50">
+        <header className="w-full fixed bg-dark top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-4">
                     <Link href="#" className="flex items-center">
                         <Image
-                            src="/3.png"
+                            src="/logogreen.png"
                             alt="J&Y logo"
                             width={50}
                             height={50}
                         />
-                        <h1 className="text-3xl text-gold font-bold">
+                        <h1 className="text-xl font-bold text-green">
                             J&Y Web Studio
                         </h1>
                     </Link>
                     <nav className="hidden md:flex space-x-8 items-center">
                         <Link
-                            href="#"
-                            className="hover:text-[#f4d47a] transition duration-300 underline-gold"
+                            href="#hero"
+                            className="hover:text-green transition duration-300 underline-green"
                         >
                             Inicio
                         </Link>
                         <Link
-                            href="#"
-                            className="hover:text-[#f4d47a] transition duration-300 underline-gold"
+                            href="#features"
+                            className="hover:text-green transition duration-300 underline-green"
                         >
                             Servicios
                         </Link>
                         <Link
-                            href="#"
-                            className="hover:text-[#f4d47a] transition duration-300 underline-gold"
+                            href="#portfolio"
+                            className="hover:text-green transition duration-300 underline-green"
                         >
                             Portafolio
                         </Link>
                         <Link
-                            href="#"
-                            className="hover:text-[#f4d47a] transition duration-300 underline-gold"
+                            href="#contact"
+                            className="hover:text-green transition duration-300 underline-green"
                         >
                             Contacto
                         </Link>
                         <Link
-                            href="#"
-                            className="hover:text-[#f4d47a] transition duration-300 underline-gold"
+                            href="#FAQ"
+                            className="hover:text-green transition duration-300 underline-green"
                         >
                             Preguntas Frecuentes
                         </Link>
                         <Link
                             href="#"
-                            className="button-gold rounded-full px-6 py-3"
+                            className="bg-green text-dark rounded-full px-6 py-3 font-medium hover:bg-[#b0f427] transition-all hover:shadow-lg shadow-green/50"
                         >
-                            Comprar
+                            Cotizar
                         </Link>
                     </nav>
                     <div className="md:hidden">

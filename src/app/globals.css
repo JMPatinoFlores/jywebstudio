@@ -1,12 +1,22 @@
 @import "tailwindcss";
 
 :root {
-    --background: #fffff0;
-    --foreground: #0c0d10;
+    --background: #030712;
+    --foreground: #ffffff;
 }
 
 @theme inline {
     --font-quicksand: "Quicksand", sans-serif;
+    --color-green: #c0fd3d;
+    --color-red: #ff3131;
+    --color-orange: #ff6700;
+    --color-yellow: #ffd700;
+    --color-blue: #008cff;
+    --color-pink: #ff1493;
+    --color-purple: #9000ff;
+    --color-cian: #00ffff;
+    --color-dark: #030712;
+    --color-surface: #121c27;
 }
 
 body {
@@ -15,40 +25,18 @@ body {
     font-family: var(--font-quicksand);
 }
 
-@keyframes gradientChange {
-    0% {
-        background-position: 0%;
-    }
-    50% {
-        background-position: 100%;
-    }
-    100% {
-        background-position: 0%;
-    }
+html {
+    scroll-behavior: smooth;
 }
 
 .text-black {
     color: #0c0d10;
 }
 
-.button-gold {
-    @apply bg-gradient-to-r from-[#b8944a] via-[#f4d47a] to-[#b8944a] text-white;
-    background-size: 200% 200%;
-    transition: gradientChange 0.4s ease-in-out;
+.text-green {
+    @apply text-[#c0fd3d];
 }
 
-.button-gold:hover {
-    animation: gradientChange 3s infinite ease-in-out;
-}
-
-.text-gold {
-    @apply bg-gradient-to-r from-[#d9b764] via-[#f4d47a] to-[#b8944a] text-transparent bg-clip-text;
-}
-
-.bg-gold {
-    @apply bg-gradient-to-r from-[#d9b764] via-[#f4d47a] to-[#b8944a];
-}
-
-.underline-gold {
-    @apply relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#d9b764] after:via-[#f4d47a] after:to-[#b8944a] after:transition-all after:duration-500 hover:after:w-full;
+.underline-green {
+    @apply relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#c0fd3d] after:transition-all after:duration-500 hover:after:w-full;
 }

@@ -4,53 +4,51 @@ import { LuArrowRight } from "react-icons/lu";
 
 export default function Hero() {
     return (
-        <section className="py-16 md:py-24 bg-yellow-50">
+        <section id="hero" className="py-16 md:py-24 relative overflow-hidden">
+            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-green rounded-full filter blur-[150px] opacity-20"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Texto */}
                     <div className="lg:w-1/2 space-y-8">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                            Impulsa tu Negocio al Siguiente Nivel{" "}
-                            <span className="text-gold">
-                                Convierte Visitantes en Clientes.
-                            </span>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-3xl">
+                            <span className="text-green">
+                                Convierte Visitantes
+                            </span>{" "}
+                            en Clientes.
                         </h1>
-                        <p className="text-xl text-gray-600">
-                            Creamos landing pages de alta calidad para pequeñas
-                            y medianas empresas que buscan generar más clientes
-                            potenciales, ventas y crecimiento.
+                        <p className="text-xl md:text-2xl mb-8 max-w-2xl text-gray-300">
+                            Creamos sitios de alta calidad para pequeñas y
+                            medianas empresas que quieren más clientes, ventas y
+                            crecimiento.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link
                                 href="#"
-                                className="button-gold rounded-full px-6 py-3 flex items-center text-lg font-medium justify-center"
+                                className="bg-green text-black rounded-full px-8 py-3 flex items-center text-lg font-medium justify-center hover:bg-[#b0f427] transition-all hover:shadow-lg shadow-green/50"
                             >
-                                COMPRAR AHORA
+                                Obtén Tu Página Ahora
                                 <span className="ml-2">
                                     <LuArrowRight size={20} />
                                 </span>
                             </Link>
                             <Link
                                 href="#"
-                                className="text-gold text-lg font-medium border border-[#f4d47a] px-6 py-3 rounded-full text-center"
+                                className="text-white hover:text-green border border-white hover:border-green px-8 py-3 rounded-full text-center font-medium text-lg transition-all hover:shadow-lg shadow-green/50"
                             >
-                                VER DEMOS
+                                Ver Demos
                             </Link>
                         </div>
                     </div>
 
                     {/* Imagen */}
                     <div className="lg:w-1/2">
-                        <div className="relative">
-                            <div className="absolute -top-6 -left-6 w-full h-full bg-gold rounded-3xl transform rotate-3"></div>
-                            <Image
-                                src="/pcimage.jpg"
-                                alt="Mockup de páginas web"
-                                width={700}
-                                height={700}
-                                className="relative rounded-3xl shadow-xl w-full"
-                            />
-                        </div>
+                        <Image
+                            src="/mainmockup.png"
+                            alt="Mockup de páginas web"
+                            width={700}
+                            height={700}
+                            className=" w-full drop-shadow-xl drop-shadow-green/40"
+                        />
                     </div>
                 </div>
             </div>
