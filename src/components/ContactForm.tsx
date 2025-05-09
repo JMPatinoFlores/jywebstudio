@@ -1,8 +1,66 @@
 "use client";
 
+import { data } from "@/constants/data";
+import Link from "next/link";
 import { LuCalendar, LuClock, LuMail, LuPhone } from "react-icons/lu";
+import Swal from "sweetalert2";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 export function ContactForm() {
+    const form = useRef<HTMLFormElement>(null);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        Swal.fire({
+            title: "¿Confirmar envío?",
+            showDenyButton: true,
+            showCancelButton: true,
+            denyButtonColor: "#ff3131",
+            confirmButtonColor: "#008cff",
+            confirmButtonText: "Sí, enviar",
+            denyButtonText: "No, no enviar",
+            cancelButtonText: "Cancelar",
+            icon: "question",
+            background: "#121c27",
+            color: "#ffffff",
+        }).then((response) => {
+            if (response.isConfirmed && form.current) {
+                emailjs
+                    .sendForm(
+                        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                        form.current,
+                        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+                    )
+                    .then(() => {
+                        Swal.fire({
+                            title: "Tus datos han sido enviados",
+                            text: "Te contactaremos pronto",
+                            icon: "success",
+                            background: "#121c27",
+                            color: "#ffffff",
+                            confirmButtonColor: "#008cff",
+                        });
+                        form.current?.reset();
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                        Swal.fire("Ocurrió un error", "", "error");
+                    });
+            } else if (response.isDenied) {
+                Swal.fire({
+                    title: "No se enviaron tus datos",
+                    icon: "warning",
+                    background: "#121c27",
+                    color: "#ffffff",
+                    confirmButtonColor: "#008cff",
+                });
+            }
+        });
+    };
+
     return (
         <section id="contact" className="py-20 relative">
             <div className="absolute -top-40 right-20 w-96 h-96 bg-pink rounded-full filter blur-[150px] opacity-10"></div>
@@ -26,21 +84,21 @@ export function ContactForm() {
                                         <LuPhone className="w-5 h-5 text-pink" />
                                     ),
                                     title: "Llámanos",
-                                    detail: "(555) 123-4567",
+                                    detail: data.telefono,
                                 },
                                 {
                                     icon: (
                                         <LuMail className="w-5 h-5 text-green" />
                                     ),
                                     title: "Envíanos un correo",
-                                    detail: "hello@landingpro.com",
+                                    detail: data.correo,
                                 },
                                 {
                                     icon: (
                                         <LuClock className="w-5 h-5 text-yellow" />
                                     ),
                                     title: "Horario de atención",
-                                    detail: "Lunes a Viernes: 9:00 AM - 5:00 PM CST",
+                                    detail: "Lunes a Viernes: 2:00 PM - 9:00 PM CST Sábados: 10:00 AM - 9:00 PM CST",
                                 },
                             ].map((item, index) => (
                                 <div key={index} className="flex items-start">
@@ -69,28 +127,35 @@ export function ContactForm() {
                                 Reserva una consulta de 30 minutos con uno de
                                 nuestros expertos.
                             </p>
-                            <button className="bg-blue text-white w-full py-3 rounded-full font-medium transition-all hover:shadow-lg shadow-blue/50">
+                            <Link
+                                href={`${data.calendly}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-blue text-white py-3 w-full flex justify-center rounded-full font-medium transition-all hover:shadow-lg shadow-blue/50"
+                            >
                                 Agendar Una Llamada
-                            </button>
+                            </Link>
                         </div>
                     </div>
                     <div className="bg-surface p-8 rounded-xl border border-gray-800 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-40 h-40 bg-green rounded-full filter blur-[80px] opacity-10"></div>
                         <h3 className="text-2xl font-bold mb-6">Contáctanos</h3>
-                        <form>
+                        <form ref={form} onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 <div>
                                     <label
                                         htmlFor="name"
                                         className="block text-sm font-medium mb-2 text-gray-400"
                                     >
-                                        Nombre Completo
+                                        Nombre Completo *
                                     </label>
                                     <input
                                         type="text"
                                         id="name"
+                                        name="name"
                                         className="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-green focus:border-transparent"
                                         placeholder="Rick Sánchez"
+                                        required
                                     />
                                 </div>
                                 <div>
@@ -98,13 +163,15 @@ export function ContactForm() {
                                         htmlFor="email"
                                         className="block text-sm font-medium mb-2 text-gray-400"
                                     >
-                                        Correo Electrónico
+                                        Correo Electrónico *
                                     </label>
                                     <input
                                         type="email"
                                         id="email"
+                                        name="email"
                                         className="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-green focus:border-transparent"
                                         placeholder="rick@example.com"
+                                        required
                                     />
                                 </div>
                             </div>
@@ -113,13 +180,15 @@ export function ContactForm() {
                                     htmlFor="company"
                                     className="block text-sm font-medium mb-2 text-gray-400"
                                 >
-                                    Nombre de Empresa o Negocio
+                                    Nombre de Empresa o Negocio *
                                 </label>
                                 <input
                                     type="text"
                                     id="company"
+                                    name="company"
                                     className="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-green focus:border-transparent"
                                     placeholder="Tu negocio"
+                                    required
                                 />
                             </div>
                             <div className="mb-6">
@@ -127,13 +196,15 @@ export function ContactForm() {
                                     htmlFor="project"
                                     className="block text-sm font-medium mb-2 text-gray-400"
                                 >
-                                    Detalles del Proyecto
+                                    Detalles del Proyecto *
                                 </label>
                                 <textarea
                                     id="project"
-                                    rows={4}
+                                    name="project"
+                                    rows={5}
                                     className="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-green focus:border-transparent"
                                     placeholder="Cuéntanos sobre tu proyecto y objetivos..."
+                                    required
                                 ></textarea>
                             </div>
                             <div className="mb-6">
@@ -155,6 +226,7 @@ export function ContactForm() {
                                                 type="radio"
                                                 id={`budget-${index}`}
                                                 name="budget"
+                                                value={budget}
                                                 className="hidden peer"
                                             />
                                             <label
@@ -167,8 +239,11 @@ export function ContactForm() {
                                     ))}
                                 </div>
                             </div>
-                            <button className="w-full bg-red text-white py-3 rounded-full font-medium transition-all hover:shadow-lg shadow-red/50">
-                                Submit Request
+                            <button
+                                type="submit"
+                                className="w-full bg-red text-white py-3 rounded-full font-medium transition-all hover:shadow-lg shadow-red/50"
+                            >
+                                Enviar
                             </button>
                         </form>
                     </div>

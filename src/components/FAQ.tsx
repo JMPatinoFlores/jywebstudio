@@ -1,11 +1,15 @@
 "use client";
 
+import { data } from "@/constants/data";
 import Link from "next/link";
 import { useState } from "react";
-import { LuArrowDownToDot, LuChevronDown } from "react-icons/lu";
+import { FaWhatsapp } from "react-icons/fa6";
+import { LuChevronDown } from "react-icons/lu";
 
 export function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const message =
+        "¡Hola! Quiero una página web pero quisiera aclarar algunas dudas.";
     const faqs = [
         {
             category: "Proceso de Desarrollo",
@@ -18,7 +22,7 @@ export function FAQ() {
                 {
                     question:
                         "¿Cuánto tiempo toma desarrollar una landing page?",
-                    answer: "El tiempo de desarrollo varía según el paquete elegido: 5-7 días hábiles para el paquete básico, 7-10 días para el intermedio, y 10-15 días para el avanzado. Estos plazos comienzan después de recibir todos los materiales necesarios.",
+                    answer: "El tiempo de desarrollo varía según el paquete elegido: 1-2 días hábiles para el paquete 'presencia express', 3-5 días para el 'presencia estratégica', y 7-10 días para el 'presencia profesional'. Estos plazos comienzan después de recibir todos los materiales necesarios.",
                 },
                 {
                     question: "¿Qué necesito proporcionar para comenzar?",
@@ -39,7 +43,7 @@ export function FAQ() {
                 },
                 {
                     question: "¿Qué tecnologías utilizan?",
-                    answer: "Utilizamos tecnologías modernas y optimizadas como React, Next.js y Tailwind CSS, asegurando un rendimiento óptimo y tiempos de carga rápidos.",
+                    answer: "Utilizamos tecnologías modernas y optimizadas como Next.js y Tailwind CSS, e integraciones modernas, asegurando un rendimiento óptimo y tiempos de carga rápidos.",
                 },
             ],
         },
@@ -64,23 +68,22 @@ export function FAQ() {
             category: "Soporte y Mantenimiento",
             questions: [
                 {
-                    question: "¿Qué incluye el soporte post-lanzamiento?",
-                    answer: "Incluimos un período de soporte gratuito después del lanzamiento (varía según el paquete) para ajustes menores. También ofrecemos planes de mantenimiento mensual opcionales.",
+                    question: "¿Qué incluye el soporte post-entrega?",
+                    answer: "Incluimos un período de soporte gratuito después de la entrega (varía según el paquete) para ajustes menores. También ofrecemos planes de mantenimiento semanal opcionales.",
                 },
                 {
-                    question:
-                        "¿Puedo solicitar cambios después del lanzamiento?",
-                    answer: "Sí, puedes solicitar cambios después del lanzamiento. Los cambios menores durante el período de garantía son gratuitos, y para modificaciones mayores proporcionamos tarifas competitivas.",
+                    question: "¿Puedo solicitar cambios después de la entrega?",
+                    answer: "Sí, puedes solicitar cambios después de la entrega. Los cambios menores durante el período de garantía son gratuitos, y para modificaciones mayores proporcionamos tarifas competitivas.",
                 },
                 {
                     question: "¿Ofrecen hosting y dominio?",
-                    answer: "Podemos asesorarte en la selección y configuración de hosting y dominio. También ofrecemos recomendaciones de proveedores confiables según tus necesidades.",
+                    answer: "El hosting es gratuito con Vercel. Podemos asesorarte en la selección y configuración de dominio o si quieres otro proveedor de hosting. También ofrecemos recomendaciones de proveedores confiables según tus necesidades.",
                 },
             ],
         },
     ];
     return (
-        <section id="FAQ" className="py-20 relative">
+        <section id="faq" className="py-20 relative">
             <div className="absolute -top-40 left-0 w-96 h-96 bg-[#c0fd3d] rounded-full filter blur-[150px] opacity-10"></div>
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
@@ -148,11 +151,13 @@ export function FAQ() {
                         ¿No encuentras la respuesta que buscas?
                     </p>
                     <Link
-                        href="#contact"
+                        href={`${data.whatsapp}${encodeURIComponent(message)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="bg-transparent border border-green text-[#c0fd3d] hover:bg-green hover:text-[#030712] px-6 py-3 rounded-full font-medium transition-all flex items-center justify-center space-x-2 hover:shadow-lg shadow-green/50"
                     >
                         <p>Contáctanos</p>
-                        <LuArrowDownToDot className="" />
+                        <FaWhatsapp />
                     </Link>
                 </div>
             </div>

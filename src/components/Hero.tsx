@@ -23,7 +23,7 @@ export default function Hero() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link
-                                href="#"
+                                href="#contact"
                                 className="bg-green text-black rounded-full px-8 py-3 flex items-center text-lg font-medium justify-center hover:bg-[#b0f427] transition-all hover:shadow-lg shadow-green/50"
                             >
                                 Obtén Tu Página Ahora
@@ -32,7 +32,7 @@ export default function Hero() {
                                 </span>
                             </Link>
                             <Link
-                                href="#"
+                                href="#portfolio"
                                 className="text-white hover:text-green border border-white hover:border-green px-8 py-3 rounded-full text-center font-medium text-lg transition-all hover:shadow-lg shadow-green/50"
                             >
                                 Ver Demos

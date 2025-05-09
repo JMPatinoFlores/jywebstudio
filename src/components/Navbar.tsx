@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { LuMenu } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
+import { data } from "@/constants/data";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function Navbar() {
                             height={50}
                         />
                         <h1 className="text-xl font-bold text-green">
-                            J&Y Web Studio
+                            {data.empresa}
                         </h1>
                     </Link>
                     <nav className="hidden md:flex space-x-8 items-center">
@@ -43,22 +44,22 @@ export default function Navbar() {
                             Portafolio
                         </Link>
                         <Link
+                            href="#faq"
+                            className="hover:text-green transition duration-300 underline-green"
+                        >
+                            Preguntas Frecuentes
+                        </Link>
+                        <Link
                             href="#contact"
                             className="hover:text-green transition duration-300 underline-green"
                         >
                             Contacto
                         </Link>
                         <Link
-                            href="#FAQ"
-                            className="hover:text-green transition duration-300 underline-green"
-                        >
-                            Preguntas Frecuentes
-                        </Link>
-                        <Link
-                            href="#"
+                            href="#pricing"
                             className="bg-green text-dark rounded-full px-6 py-3 font-medium hover:bg-[#b0f427] transition-all hover:shadow-lg shadow-green/50"
                         >
-                            Cotizar
+                            Ver Planes
                         </Link>
                     </nav>
                     <div className="md:hidden">
@@ -76,12 +77,12 @@ export default function Navbar() {
                 </div>
                 {isMenuOpen && (
                     <div className="md:hidden py-4">
-                        <div className="flex flex-col space-y-3">
-                            <Link href="#">Inicio</Link>
-                            <Link href="#">Servicios</Link>
-                            <Link href="#">Portafolio</Link>
-                            <Link href="#">Contacto</Link>
-                            <Link href="#">Preguntas Frecuentes</Link>
+                        <div className="flex flex-col space-y-3 text-right">
+                            <Link href="#hero">Inicio</Link>
+                            <Link href="#services">Servicios</Link>
+                            <Link href="#portfolio">Portafolio</Link>
+                            <Link href="#faq">Preguntas Frecuentes</Link>
+                            <Link href="#contact">Contacto</Link>
                         </div>
                     </div>
                 )}

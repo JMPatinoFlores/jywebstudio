@@ -55,6 +55,7 @@ export default function Portfolio() {
                                 <Link
                                     href={demo.link}
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-full py-3 rounded-full font-medium hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
                                     style={{
                                         backgroundColor: "transparent",

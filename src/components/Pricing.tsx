@@ -1,66 +1,69 @@
+import { data } from "@/constants/data";
 import Link from "next/link";
 import { LuCheck } from "react-icons/lu";
 
 export function Pricing() {
+    // const message =
+    //     "¡Hola! Quiero agendar una consulta para obtener mi página web.";
     const packages = [
         {
-            id: "basic",
-            title: "Paquete Básico",
-            price: 3500,
-            deliveryTime: "5 a 7 días hábiles",
+            id: "express",
+            title: "Paquete Presencia Express",
+            price: 1500,
+            deliveryTime: "1 a 2 días hábiles",
             features: [
-                "Página de bienvenida profesional",
-                "Hasta 3 secciones (ejemplo: Quiénes somos, Servicios, Contacto)",
-                "Formulario de contacto funcional (EmailJS)",
-                "Mapa de ubicación",
-                "Botón flotante de WhatsApp",
-                "Integración de redes sociales",
-                "Galería de hasta 6 fotos",
-                "Diseño responsive adaptado a móviles",
+                "Página profesional de una sección",
+                "Incluye: nombre del negocio, frase destacada, hasta 3 imágenes, horarios, botón de llamada a la acción",
+                "Diseño responsive, optimizado para todo tipo de dispositivos",
+                "Hosting gratuito en Vercel",
+                "Botón de WhatsApp y/o redes sociales",
+                "1 ajuste menor post-entrega (si necesitas un pequeño cambio)",
             ],
-            idealFor: "Perfecto para pequeñas empresas y nuevas empresas.",
             color: "#008cff",
             highlighted: false,
         },
         {
-            id: "intermediate",
-            title: "Paquete Intermedio",
-            price: 5500,
-            deliveryTime: "7 a 10 días hábiles",
+            id: "estrategica",
+            title: "Paquete Presencia Estratégica",
+            price: 3500,
+            deliveryTime: "3 a 5 días hábiles",
             features: [
-                "Todo lo incluido en el Paquete Básico",
-                "Página adicional de servicios o productos",
-                "Galería expandida (hasta 10 fotos o productos)",
-                "Carrito de compras sencillo (sin backend, con LocalStorage)",
-                "Botón de pago directo (Stripe o PayPal) opcional",
-                "Formulario de reservaciones (opcional)",
+                "Hasta 4 secciones personalizadas: Inicio, servicios, galería, etc.",
+                "Diseño optimizado con scroll suave y navegación anclada",
+                "Nombre, logo y descripción del negocio, junto con una llamada a la acción efectiva",
+                "Galería visual (hasta 6 imágenes), horarios de atención y ubicación",
+                "Botón flotante de WhatsApp y enlaces a redes sociales integrados",
+                "Elige entre: formulario de contacto funcional o sistema de reservas",
+                "Ubicación con mapa embebido",
+                "SEO básico",
+                "2 ajustes incluidos para personalizar tu web a tu gusto",
             ],
-            idealFor:
-                "Ideal para empresas en crecimiento que buscan resultados.",
             color: "#c0fd3d",
             highlighted: true,
         },
         {
-            id: "advanced",
-            title: "Paquete Avanzado",
-            price: 7500,
-            deliveryTime: "10 a 15 días hábiles",
+            id: "profesional",
+            title: "Paquete Presencia Profesional",
+            price: 5800,
+            deliveryTime: "7 a 10 días hábiles",
             features: [
-                "Todo lo incluido en el Paquete Intermedio",
-                "Sección de cursos o catálogo de productos",
-                "Carrito de compras funcional",
-                "Integración opcional con Stripe o PayPal (pago adicional)",
-                "Sistema de reservas conectado a Calendario",
-                "Actualizaciones menores gratuitas por 15 días",
+                "Todo lo del Paquete Presencia Estratégica",
+                "Mejora visual personalizada: paleta de colores, tipografía y logo básico incluido",
+                "Hasta 6 secciones (incl. FAQ y Testimonios)",
+                "Galería interactiva (carrusel o lightbox)",
+                "Llamadas a la acción distribuidas",
+                "Formulario de contacto funcional + sistema de reservas integrado",
+                "Animaciones sutiles",
+                "Mejoras de visibilidad en Google (etiquetas, títulos, estructura optimizada)",
+                "Soporte post-entrega de 7 días",
             ],
-            idealFor: "Para empresas que necesitan soluciones integrales.",
             color: "#ff3131",
             highlighted: false,
         },
     ];
 
     return (
-        <section className="py-20 relative">
+        <section id="pricing" className="py-20 relative">
             <div className="absolute -top-40 right-0 w-80 h-80 bg-[#ff6700] rounded-full filter blur-[150px] opacity-10"></div>
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
@@ -158,7 +161,9 @@ export function Pricing() {
                         necesidades específicas.
                     </p>
                     <Link
-                        href="#"
+                        href={`${data.calendly}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="bg-transparent border border-cian text-[#00ffff] hover:text-[#030712] hover:bg-cian hover:bg-opacity-10 px-6 py-3 rounded-full font-medium transition-all hover:shadow-lg shadow-cian/50"
                     >
                         Programar una Consulta
