@@ -43,7 +43,7 @@ export default function RootLayout({
         <html lang="es">
             <body className={`${quicksand.className} antialiased`}>
                 <Navbar />
-                <main className="flex-1">{children}</main>
+                <main className="flex-1 pt-24 md:pt-0">{children}</main>
                 <Footer />
                 <FloatingWhatsApp />
             </body>

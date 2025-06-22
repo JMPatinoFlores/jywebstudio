@@ -64,7 +64,7 @@ export function Pricing() {
 
     return (
         <section id="pricing" className="py-20 relative">
-            <div className="absolute -top-40 right-0 w-80 h-80 bg-[#ff6700] rounded-full filter blur-[150px] opacity-10"></div>
+            <div className="absolute -top-40 right-0 w-80 h-80 bg-orange rounded-full filter blur-[150px] opacity-10 -z-10"></div>
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -91,7 +91,7 @@ export function Pricing() {
               `}
                         >
                             {pkg.highlighted && (
-                                <div className="absolute top-0 left-0 w-full bg-green text-[#030712] text-center py-1 font-medium">
+                                <div className="absolute top-0 left-0 w-full bg-green text-dark text-center py-1 font-medium">
                                     POPULAR
                                 </div>
                             )}
@@ -164,7 +164,7 @@ export function Pricing() {
                         href={`${data.calendly}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-transparent border border-cian text-[#00ffff] hover:text-[#030712] hover:bg-cian hover:bg-opacity-10 px-6 py-3 rounded-full font-medium transition-all hover:shadow-lg shadow-cian/50"
+                        className="bg-transparent border border-cian text-cian hover:text-dark hover:bg-cian hover:bg-opacity-10 px-6 py-3 rounded-full font-medium transition-all hover:shadow-lg shadow-cian/50"
                     >
                         Programar una Consulta
                     </Link>

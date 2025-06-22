@@ -7,6 +7,7 @@ export const demos = [
         link: "https://pizzeria-demo-ecru.vercel.app/",
         tags: ["Restaurante", "Comida rápida", "Pizzería"],
         color: "#ff3131",
+        price: "$3,950 MXN",
     },
     {
         image: "/mockup4.png",
@@ -16,6 +17,7 @@ export const demos = [
         link: "https://glowupstudio.vercel.app/",
         tags: ["Belleza", "Salón", "Cuidado personal"],
         color: "#ff1493",
+        price: "$6,150 MXN",
     },
     {
         image: "/mockup5.png",
@@ -25,6 +27,17 @@ export const demos = [
         link: "https://consultorio-demo.vercel.app/",
         tags: ["Salud", "Nutrición", "Consultorio"],
         color: "#c0fd3d",
+        price: "$5,800 MXN",
+    },
+    {
+        image: "/mockup6.png",
+        title: "D'Moda Accesorios",
+        description:
+            "Página profesional de una sola sección para negocios que quieren presencia sencilla y efectiva en línea.",
+        link: "https://dmoda-accesorios-demo.vercel.app/",
+        tags: ["Moda", "Accesorios", "Negocio Local"],
+        color: "#9000ff",
+        price: "$1,500 MXN",
     },
 ];
 

@@ -84,7 +84,7 @@ export function FAQ() {
     ];
     return (
         <section id="faq" className="py-20 relative">
-            <div className="absolute -top-40 left-0 w-96 h-96 bg-[#c0fd3d] rounded-full filter blur-[150px] opacity-10"></div>
+            <div className="absolute -top-40 left-0 w-96 h-96 bg-[#c0fd3d] rounded-full filter blur-[150px] opacity-10 -z-10"></div>
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">

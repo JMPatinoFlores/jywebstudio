@@ -1,7 +1,7 @@
+import { FaWhatsapp } from "react-icons/fa";
 import {
+    LuDollarSign,
     LuHandshake,
-    LuPenTool,
-    LuPlugZap,
     LuRocket,
     LuShieldCheck,
     LuSmartphone,
@@ -10,40 +10,40 @@ import {
 export default function Features() {
     const features = [
         {
-            icon: <LuRocket className="h-8 w-8 text-yellow" />,
-            title: "Carga Rápida",
-            description:
-                "El código optimizado garantiza que tu página de destino se cargue rápidamente.",
-        },
-        {
-            icon: <LuSmartphone className="h-8 w-8 text-blue" />,
-            title: "100% Responsive",
-            description:
-                "Se ve perfectas en cualquier dispositivo, desde computadoras hasta smartphones.",
-        },
-        {
             icon: <LuHandshake className="h-8 w-8 text-pink" />,
-            title: "Atracción efectiva",
+            title: "Atracción Efectiva",
             description:
-                "Diseño estratégico que guía a los visitantes hacia tu objetivo principal.",
-        },
-        {
-            icon: <LuPlugZap className="h-8 w-8 text-green" />,
-            title: "Integraciones Modernas",
-            description:
-                "Conecta herramientas como WhatsApp, formularios de contacto, Google Maps y más.",
-        },
-        {
-            icon: <LuPenTool className="h-8 w-8 text-cian" />,
-            title: "Diseño personalizado",
-            description:
-                "Diseñado para adaptarse a tu identidad de marca y objetivos de negocio.",
+                "Diseño enfocado en guiar a tus clientes a comprar o contactarte (no solo a 'ver').",
         },
         {
             icon: <LuShieldCheck className="h-8 w-8 text-orange" />,
-            title: "SEO Optimizado",
+            title: "Visibilidad",
             description:
-                "Estructura pensada para mejorar tu posicionamiento en buscadores.",
+                "Aparece en Google y atrae clientes sin pagar publicidad.",
+        },
+        {
+            icon: <LuRocket className="h-8 w-8 text-yellow" />,
+            title: "Carga Rápida",
+            description:
+                "Velocidad optimizada para no perder clientes impacientes.",
+        },
+        {
+            icon: <FaWhatsapp className="h-8 w-8 text-green" />,
+            title: "Contacto Directo",
+            description:
+                "Botón de WhatsApp integrado para que te contacten al instante.",
+        },
+        {
+            icon: <LuSmartphone className="h-8 w-8 text-blue" />,
+            title: "Diseño móvil",
+            description:
+                "El 80% de tus clientes navega desde celular: tu página se verá impecable.",
+        },
+        {
+            icon: <LuDollarSign className="h-8 w-8 text-cian" />,
+            title: "Precio Accesible",
+            description:
+                "Landing page profesional desde $1,500 (sin costos ocultos).",
         },
     ];
 
@@ -54,14 +54,12 @@ export default function Features() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Todo Lo Que Necesitas Para{" "}
-                        <span className="text-green">
-                            Una Página De Alta Calidad
-                        </span>
+                        Todo Lo Que Necesitas{" "}
+                        <span className="text-green">Para Captar Clientes</span>
                     </h2>
                     <p className="max-w-2xl mx-auto text-gray-400">
-                        Nuestras páginas están diseñadas con estrategias
-                        probadas para atraer visitantes e impulsar la acción.
+                        No solo una página bonita: una herramienta que convierte
+                        visitantes en clientes.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { ExtraServices } from "@/components/ExtraServices";
 import { FAQ } from "@/components/FAQ";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
@@ -12,6 +13,7 @@ export default function Home() {
             <Features />
             <Portfolio />
             <Pricing />
+            <ExtraServices />
             <FAQ />
             <ContactForm />
         </div>
