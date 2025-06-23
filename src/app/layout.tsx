@@ -69,6 +69,11 @@ export default function RootLayout({
         description:
             "Desarrollo de páginas web profesionales para pequeñas empresas y emprendedores",
         telephone: "+525652147607",
+        address: {
+            "@type": "PostalAddress",
+            addressLocality: "Trabajo remoto",
+            addressCountry: "MX",
+        },
         email: "jywebstudio@hotmail.com",
         serviceType: "Desarrollo web para PYMES",
         offers: [
