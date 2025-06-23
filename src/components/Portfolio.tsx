@@ -67,12 +67,14 @@ export default function Portfolio() {
                                             </span>
                                         ))}
                                     </div>
-                                    <h3 className="text-xl font-bold">
-                                        {demo.title}
-                                    </h3>
-                                    <p className="text-md mb-2">
-                                        Precio: {demo.price}
-                                    </p>
+                                    <div>
+                                        <h3 className="text-xl font-bold">
+                                            {demo.title}
+                                        </h3>
+                                        <p className="text-md mb-2">
+                                            Precio: {demo.price}
+                                        </p>
+                                    </div>
                                     <p className="text-gray-400 mb-6">
                                         {demo.description}
                                     </p>

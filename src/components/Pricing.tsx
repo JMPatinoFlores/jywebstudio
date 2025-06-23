@@ -21,6 +21,7 @@ export function Pricing() {
             ],
             color: "#008cff",
             highlighted: false,
+            link: "https://buy.stripe.com/cNiaEY6Pt7nngvs57g4F200",
         },
         {
             id: "estrategica",
@@ -40,6 +41,7 @@ export function Pricing() {
             ],
             color: "#c0fd3d",
             highlighted: true,
+            link: "https://buy.stripe.com/bJe28sgq30YZ1Ay1V44F201",
         },
         {
             id: "profesional",
@@ -59,6 +61,7 @@ export function Pricing() {
             ],
             color: "#ff3131",
             highlighted: false,
+            link: "https://buy.stripe.com/9B6cN67Tx9vvenk0R04F202",
         },
     ];
 
@@ -121,7 +124,8 @@ export function Pricing() {
                                 Entrega en {pkg.deliveryTime}
                             </p>
                             <Link
-                                href="#"
+                                href={pkg.link}
+                                target="_blank"
                                 className="block w-full py-3 rounded-full font-medium mb-8 transition-colors text-center"
                                 style={{
                                     backgroundColor: pkg.highlighted
