@@ -11,15 +11,26 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-    title: "J&Y Web Studio | Páginas Web Profesionales para PYMES",
+    title: "J&Y Web Studio | Páginas Web Profesionales para PYMES y Emprendedores",
     description:
-        "Diseñamos landing pages modernas, rápidas y optimizadas para pequeñas y medianas empresas. Aumenta tu presencia en línea y consigue más clientes con J&Y Web Studio.",
-    keywords:
-        "páginas web para empresas, diseño web profesional, landing pages, sitios web para pymes, diseño web moderno, páginas web económicas, J&Y Web Studio",
+        "Creamos tu página web profesional desde $1,500 - Atrae clientes, muestra tus servicios y aumenta tu presencia online. Diseño rápido, moderno y sin complicaciones.",
+    keywords: [
+        "páginas web económicas",
+        "diseño web para negocios",
+        "crear página web profesional",
+        "sitio web para pymes",
+        "presencia online",
+        "página web emprendedores",
+        "diseño web rápido",
+        "páginas web en México",
+        "landing page para negocios",
+        "J&Y Web Studio",
+    ],
+    metadataBase: new URL("https://jywebstudio.vercel.app"),
     openGraph: {
-        title: "J&Y Web Studio | Diseño Web Profesional para tu Negocio",
+        title: "Tu Página Web Profesional Lista en 7 Días | J&Y Web Studio",
         description:
-            "Creamos páginas web efectivas y a medida para pequeñas empresas. Tu negocio merece presencia digital de calidad. ¡Conócenos!",
+            "Diseñamos páginas web efectivas para que tu negocio destaque en internet. Sin mensualidades ni complicaciones técnicas. ¡Cotiza hoy!",
         url: "https://jywebstudio.vercel.app",
         siteName: "J&Y Web Studio",
         type: "website",
@@ -28,9 +39,20 @@ export const metadata: Metadata = {
                 url: "https://jywebstudio.vercel.app/jyweb-og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "J&Y Web Studio - Diseño Web Profesional",
+                alt: "Ejemplo de página web profesional para negocios - J&Y Web Studio",
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Páginas Web Profesionales Desde $1,500 | J&Y Web Studio",
+        description:
+            "Diseño web rápido y económico para PYMES. Atrae más clientes con una presencia online profesional.",
+        images: ["https://jywebstudio.vercel.app/jyweb-twitter-image.png"],
+    },
+    robots: {
+        index: true,
+        follow: true,
     },
 };
 
@@ -39,8 +61,62 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        name: "J&Y Web Studio",
+        image: "https://jywebstudio.vercel.app/logo.png",
+        description:
+            "Desarrollo de páginas web profesionales para pequeñas empresas y emprendedores",
+        telephone: "+525652147607",
+        email: "jywebstudio@hotmail.com",
+        serviceType: "Desarrollo web para PYMES",
+        offers: [
+            {
+                "@type": "Service",
+                name: "Landing Page Express",
+                price: "1500",
+                priceCurrency: "MXN",
+                description:
+                    "Página web de una sección con diseño móvil y SEO básico",
+                deliveryLeadTime: "P1D",
+            },
+            {
+                "@type": "Service",
+                name: "Landing Page Básica",
+                price: "3500",
+                priceCurrency: "MXN",
+                description:
+                    "Página web de 4 secciones con galería visual y diseño optimizado",
+                deliveryLeadTime: "P3D",
+            },
+            {
+                "@type": "Service",
+                name: "Landing Page Profesional",
+                price: "5800",
+                priceCurrency: "MXN",
+                description:
+                    "Página web de 6 secciones con mejora visual personalizada, animaciones y SEO optimizado",
+                deliveryLeadTime: "P7D",
+            },
+        ],
+        areaServed: ["México", "América Latina"],
+        availableChannel: {
+            "@type": "ServiceChannel",
+            serviceUrl: "https://jywebstudio.vercel.app",
+        },
+    };
     return (
         <html lang="es">
+            <head>
+                <link rel="canonical" href="https://jywebstudio.vercel.app/" />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(schemaData),
+                    }}
+                />
+            </head>
             <body className={`${quicksand.className} antialiased`}>
                 <Navbar />
                 <main className="flex-1 pt-24 md:pt-0">{children}</main>
