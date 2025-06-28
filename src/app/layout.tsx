@@ -26,17 +26,17 @@ export const metadata: Metadata = {
         "landing page para negocios",
         "J&Y Web Studio",
     ],
-    metadataBase: new URL("https://jywebstudio.vercel.app"),
+    metadataBase: new URL("https://www.jywebstudio.com"),
     openGraph: {
         title: "Tu Página Web Profesional Lista en 7 Días | J&Y Web Studio",
         description:
             "Diseñamos páginas web efectivas para que tu negocio destaque en internet. Sin mensualidades ni complicaciones técnicas. ¡Cotiza hoy!",
-        url: "https://jywebstudio.vercel.app",
+        url: "https://www.jywebstudio.com",
         siteName: "J&Y Web Studio",
         type: "website",
         images: [
             {
-                url: "https://jywebstudio.vercel.app/jyweb-og-image.png",
+                url: "https://www.jywebstudio.com/jyweb-og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Ejemplo de página web profesional para negocios - J&Y Web Studio",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         title: "Páginas Web Profesionales Desde $1,500 | J&Y Web Studio",
         description:
             "Diseño web rápido y económico para PYMES. Atrae más clientes con una presencia online profesional.",
-        images: ["https://jywebstudio.vercel.app/jyweb-twitter-image.png"],
+        images: ["https://www.jywebstudio.com/jyweb-twitter-image.png"],
     },
     robots: {
         index: true,
@@ -65,7 +65,7 @@ export default function RootLayout({
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         name: "J&Y Web Studio",
-        image: "https://jywebstudio.vercel.app/logo.png",
+        image: "https://www.jywebstudio.com/logo.png",
         description:
             "Desarrollo de páginas web profesionales para pequeñas empresas y emprendedores",
         telephone: "+525652147607",
@@ -108,13 +108,13 @@ export default function RootLayout({
         areaServed: ["México", "América Latina"],
         availableChannel: {
             "@type": "ServiceChannel",
-            serviceUrl: "https://jywebstudio.vercel.app",
+            serviceUrl: "https://www.jywebstudio.com",
         },
     };
     return (
         <html lang="es">
             <head>
-                <link rel="canonical" href="https://jywebstudio.vercel.app/" />
+                <link rel="canonical" href="https://www.jywebstudio.com/" />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
